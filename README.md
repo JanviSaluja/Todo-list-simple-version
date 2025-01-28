@@ -13,6 +13,7 @@
 - Used 'Grid' to display the list in a table-like structure.
 
 ## Link to the preview:
+https://janvisaluja.github.io/Todo-list-simple-version/
 
 ## Contact:
 - mail- janvisaluja.24@gmail.com
