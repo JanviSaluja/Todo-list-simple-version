@@ -14,18 +14,17 @@ function add(){
 
 function display(){
     let todohtml='';
-    for(let i=0; i<todo.length; i++){
-        const name= todo[i].name;
-        const duedate= todo[i].date;
+    todo.forEach(function(todoObject,index){
+        const {name,date}=todoObject;
         const html=`
             <div>${name}</div>
-            <div>${duedate}</div>
+            <div>${date}</div>
             <button class="delete-button"
                 onclick=" 
-                todo.splice(${i},1)
+                todo.splice(${index},1)
                 display()">Delete</button>
         `;
         todohtml+=html;
-    }
+    })
     document.querySelector('.display-js').innerHTML=todohtml;
 }
