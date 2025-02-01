@@ -14,7 +14,7 @@ function add(){
 
 function display(){
     let todohtml='';
-    todo.forEach(function(todoObject,index){
+    todo.forEach((todoObject,index)=>{
         const {name,date}=todoObject;
         const html=`
             <div>${name}</div>
