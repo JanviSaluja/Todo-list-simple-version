@@ -1,5 +1,8 @@
 const todo=[];
 
+document.querySelector('.js-add-button').addEventListener('click',()=>{
+    add();
+})
 
 function add(){
     const inputElement=document.querySelector('.input-js');
@@ -14,17 +17,21 @@ function add(){
 
 function display(){
     let todohtml='';
-    todo.forEach((todoObject,index)=>{
+    todo.forEach((todoObject)=>{
         const {name,date}=todoObject;
         const html=`
             <div>${name}</div>
             <div>${date}</div>
-            <button class="delete-button"
-                onclick=" 
-                todo.splice(${index},1)
-                display()">Delete</button>
+            <button class="delete-button js-delete-button">Delete</button>
         `;
         todohtml+=html;
     })
     document.querySelector('.display-js').innerHTML=todohtml;
+
+    document.querySelectorAll('.js-delete-button').forEach((deleteButton,index)=>{
+        deleteButton.addEventListener('click',()=>{
+            todo.splice(index,1)
+            display()
+        });
+    });
 }
